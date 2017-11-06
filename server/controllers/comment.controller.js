@@ -67,3 +67,23 @@ export function deleteComment(req, res) {
     });
   });
 }
+
+/**
+ * Delete all Comments
+ * @param req
+ * @param res
+ * @returns void
+ */
+export function deleteAllComments(req, res) {
+  console.log('req.params.cuid', req.params.cuid);
+  Comment.find({ cuid: req.params.cuid }).exec((err, comment) => {
+
+    console.log('comment', comment);
+    if (err) {
+      res.status(500).send(err);
+    }
+    comment.remove({}, () => {
+      res.status(200).end();
+    });
+  });
+}

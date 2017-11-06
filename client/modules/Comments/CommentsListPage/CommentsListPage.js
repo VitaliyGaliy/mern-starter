@@ -30,6 +30,7 @@ class CommentsListPage extends Component {
   };
 
   render() {
+    console.log('showAddComment', this.props.showAddComment);
     return (
       <div>
         <CommentsCreateWidget addComment={this.handleAddComment} showAddComment={this.props.showAddComment} />

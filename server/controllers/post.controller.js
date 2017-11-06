@@ -30,7 +30,7 @@ export function addPost(req, res) {
   }
 
   const newPost = new Post(req.body.post);
-  console.log('req.body.post', req.body.post);
+
   // Let's sanitize inputs
   newPost.title = sanitizeHtml(newPost.title);
   newPost.name = sanitizeHtml(newPost.name);
@@ -38,7 +38,6 @@ export function addPost(req, res) {
 
   newPost.slug = slug(newPost.title.toLowerCase(), { lowercase: true });
   newPost.cuid = cuid();
-  console.log('newPost', newPost);
   newPost.save((err, saved) => {
     if (err) {
       res.status(500).send(err);

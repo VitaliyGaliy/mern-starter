@@ -4,6 +4,7 @@ import callApi from '../../util/apiCaller';
 export const ADD_COMMENT = 'ADD_COMMENT';
 export const ADD_COMMENTS = 'ADD_COMMENTS';
 export const DELETE_COMMENT = 'DELETE_COMMENT';
+export const DELETE_COMMENTS = 'DELETE_COMMENTS';
 
 // Export Actions
 
@@ -51,6 +52,20 @@ export function deleteComment(_id) {
 
 export function deleteCommentRequest(_id) {
   return (dispatch) => {
-    return callApi(`comments/${_id}`, 'delete').then(() => dispatch(deleteComment(_id)));
+    return callApi(`comment/${_id}`, 'delete').then(() => dispatch(deleteComment(_id)));
+  };
+}
+
+export function deleteComments(cuid) {
+  console.log('deleteComments');
+  return {
+    type: DELETE_COMMENTS,
+    cuid,
+  };
+}
+
+export function deleteAllCommentsRequest(cuid) {
+  return (dispatch) => {
+    return callApi(`comments/${cuid}`, 'delete').then(() => dispatch(deleteComments(cuid)));
   };
 }
