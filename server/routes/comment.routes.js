@@ -3,7 +3,7 @@ import * as CommentController from '../controllers/comment.controller';
 const router = new Router();
 
 // Get all Comments
-router.route('/comments/:cuid').get(CommentController.getComments)
+router.route('/comments/:cuid').get(CommentController.getComments);
 
 // Get one post by cuid
 // router.route('/comments/:cuid').get(CommentController.getComments);

@@ -30,10 +30,9 @@ class CommentsListPage extends Component {
   };
 
   render() {
-
     return (
       <div>
-        <CommentsCreateWidget addComment={this.handleAddComment} showAddComment={this.props.showAddComment}/>
+        <CommentsCreateWidget addComment={this.handleAddComment} showAddComment={this.props.showAddComment} />
         <CommentsList handleDeleteComment={this.handleDeleteComment} comments={this.props.comments} />
       </div>
     );
@@ -41,7 +40,7 @@ class CommentsListPage extends Component {
 }
 
 // Actions required to provide data for this component to render in sever side.
-CommentsListPage.need = [() => { return fetchComments()}];
+CommentsListPage.need = [() => { return fetchComments(); }];
 
 // Retrieve data from store as props
 function mapStateToProps(state) {
@@ -56,7 +55,9 @@ CommentsListPage.propTypes = {
     name: PropTypes.string.isRequired,
     content: PropTypes.string.isRequired,
   })).isRequired,
+  cuid: PropTypes.string.isRequired,
   dispatch: PropTypes.func.isRequired,
+  showAddComment: PropTypes.bool.isRequired,
 };
 
 CommentsListPage.contextTypes = {

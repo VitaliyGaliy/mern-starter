@@ -8,7 +8,6 @@ export const DELETE_COMMENT = 'DELETE_COMMENT';
 // Export Actions
 
 export function addComments(comments) {
-
   return {
     type: ADD_COMMENTS,
     comments,
@@ -16,7 +15,6 @@ export function addComments(comments) {
 }
 
 export function fetchComments(cuid) {
-
   return (dispatch) => {
     return callApi(`comments/${cuid}`).then(res => {
       dispatch(addComments(res.comments));
@@ -26,7 +24,6 @@ export function fetchComments(cuid) {
 
 
 export function addComment(comment) {
-
   return {
     type: ADD_COMMENT,
     comment,

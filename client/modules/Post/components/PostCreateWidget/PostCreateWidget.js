@@ -5,9 +5,11 @@ import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
 import styles from './PostCreateWidget.css';
 
 export class PostCreateWidget extends Component {
+
   addPost = () => {
     const nameRef = this.refs.name;
     const titleRef = this.refs.title;
+
     const contentRef = this.refs.content;
     if (nameRef.value && titleRef.value && contentRef.value) {
       this.props.addPost(nameRef.value, titleRef.value, contentRef.value);

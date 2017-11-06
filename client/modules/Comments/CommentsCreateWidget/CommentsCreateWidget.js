@@ -15,14 +15,13 @@ export class CommentsCreateWidget extends Component {
   };
 
   render() {
-
     const cls = `${styles.form} ${(!this.props.showAddComment ? styles.appear : '')}`;
     return (
       <div className={cls}>
         <div className={styles['form-content']}>
           <input placeholder={this.props.intl.messages.authorName} className={styles['form-field']} ref="name" />
-        <textarea placeholder={this.props.intl.messages.commentsContent} className={styles['form-field']} ref="content" />
-        <a className={styles['comments-submit-button']} href="#" onClick={this.addComments}><FormattedMessage id="submit" /></a>
+          <textarea placeholder={this.props.intl.messages.commentsContent} className={styles['form-field']} ref="content" />
+          <a className={styles['comments-submit-button']} href="#" onClick={this.addComments}><FormattedMessage id="submit" /></a>
         </div>
       </div>
     );
@@ -30,8 +29,8 @@ export class CommentsCreateWidget extends Component {
 }
 
 CommentsCreateWidget.propTypes = {
-  addComments: PropTypes.func.isRequired,
-  showAddComments: PropTypes.bool.isRequired,
+  addComment: PropTypes.func.isRequired,
+  showAddComment: PropTypes.bool.isRequired,
   intl: intlShape.isRequired,
 };
 

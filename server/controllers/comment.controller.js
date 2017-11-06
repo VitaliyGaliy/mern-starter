@@ -1,6 +1,4 @@
 import Comment from '../models/comment';
-import cuid from 'cuid';
-import slug from 'limax';
 import sanitizeHtml from 'sanitize-html';
 // import post from '../models/post';
 
@@ -11,16 +9,13 @@ import sanitizeHtml from 'sanitize-html';
  * @returns void
  */
 
- const post = {
-   path: 'post',
-   model: 'Post'
- };
+ // const post = {
+ //   path: 'post',
+ //   model: 'Post',
+ // };
 
 export function getComments(req, res) {
-
-  Comment.find({cuid: req.params.cuid})
-  .populate(post)
-  .exec((err, comments) => {
+  Comment.find({ cuid: req.params.cuid }).exec((err, comments) => {
     if (err) {
       res.status(500).send(err);
     }
@@ -64,11 +59,9 @@ export function addComment(req, res) {
  */
 export function deleteComment(req, res) {
   Comment.findOne({ _id: req.params._id }).exec((err, comment) => {
-
     if (err) {
       res.status(500).send(err);
     }
-
     comment.remove(() => {
       res.status(200).end();
     });

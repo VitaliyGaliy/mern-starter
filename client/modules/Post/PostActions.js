@@ -7,6 +7,7 @@ export const DELETE_POST = 'DELETE_POST';
 
 // Export Actions
 export function addPost(post) {
+  console.log('post', post);
   return {
     type: ADD_POST,
     post,
