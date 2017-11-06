@@ -3,11 +3,13 @@ export default {
   messages: {
     siteTitle: 'MERN Starter Blog',
     addPost: 'Add Post',
+    addComment: 'Add Comment',
     switchLanguage: 'Switch Language',
     twitterMessage: 'We are on Twitter',
     by: 'By',
     deletePost: 'Delete Post',
     createNewPost: 'Create new post',
+    createNewComments: 'Create new comment',
     authorName: 'Author\'s Name',
     postTitle: 'Post Title',
     postContent: 'Post Content',

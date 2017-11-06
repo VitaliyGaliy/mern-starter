@@ -6,6 +6,7 @@ import { FormattedMessage } from 'react-intl';
 import styles from './PostListItem.css';
 
 function PostListItem(props) {
+  console.log('props', props);
   return (
     <div className={styles['single-post']}>
       <h3 className={styles['post-title']}>

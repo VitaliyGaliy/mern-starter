@@ -1,6 +1,7 @@
 export default {
   locale: 'fr',
   messages: {
+    addComment: 'Ajouter un commentaire',
     siteTitle: 'MERN blog de démarrage',
     addPost: 'Ajouter Poster',
     switchLanguage: 'Changer de langue',
@@ -8,6 +9,7 @@ export default {
     by: 'Par',
     deletePost: 'Supprimer le message',
     createNewPost: 'Créer un nouveau message',
+    createNewPost: 'Créer un nouveau comment',
     authorName: 'Nom de l\'auteur',
     postTitle: 'Titre de l\'article',
     postContent: 'Contenu après',

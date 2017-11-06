@@ -5,6 +5,7 @@ import { FormattedMessage } from 'react-intl';
 
 // Import Style
 import styles from '../../components/PostListItem/PostListItem.css';
+import Comments from '../../../Comments/CommentsListPage/CommentsListPage';
 
 // Import Actions
 import { fetchPost } from '../../PostActions';
@@ -21,6 +22,7 @@ export function PostDetailPage(props) {
         <p className={styles['author-name']}><FormattedMessage id="by" /> {props.post.name}</p>
         <p className={styles['post-desc']}>{props.post.content}</p>
       </div>
+      <Comments cuid={props.post.cuid}/>
     </div>
   );
 }

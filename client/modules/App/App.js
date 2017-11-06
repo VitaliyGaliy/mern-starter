@@ -11,7 +11,7 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
 // Import Actions
-import { toggleAddPost } from './AppActions';
+import { toggleAddPost, toggleAddComment } from './AppActions';
 import { switchLanguage } from '../../modules/Intl/IntlActions';
 
 export class App extends Component {
@@ -26,6 +26,10 @@ export class App extends Component {
 
   toggleAddPostSection = () => {
     this.props.dispatch(toggleAddPost());
+  };
+
+  toggleAddCommentSection = () => {
+    this.props.dispatch(toggleAddComment());
   };
 
   render() {
@@ -52,6 +56,7 @@ export class App extends Component {
             switchLanguage={lang => this.props.dispatch(switchLanguage(lang))}
             intl={this.props.intl}
             toggleAddPost={this.toggleAddPostSection}
+            toggleAddComment={this.toggleAddCommentSection}
           />
           <div className={styles.container}>
             {this.props.children}
